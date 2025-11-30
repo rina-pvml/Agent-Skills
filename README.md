@@ -1,15 +1,15 @@
 # Agent Skills Tester
 
-A full-stack application for creating and managing AI agents with customizable prompt tools. Build agents, create reusable skills, and chat with AI models from OpenAI and Anthropic.
+A full-stack application for creating and managing AI agents with customizable skills. Build agents, create reusable skills, and chat with AI models from OpenAI and Anthropic.
 The goal is for you to play around with an example implementation of the Agent Skills concept to showcase its value, core capabilities, and benefits in production environments.
 
 ## Features
 
 - 🤖 **Agent Management**: Create and configure AI agents with different LLM models
-- 🛠️ **Prompt Tools**: Create Agent Skills that can be called on-demand by the LLM
-- 💬 **Interactive Chat**: Chat with your agents and see which tools were used
+- 🛠️ **Custom Skills**: Create Agent Skills that can be called on-demand by the LLM
+- 💬 **Interactive Chat**: Chat with your agents and see which skills were used
 - 🎨 **UI**: Full interface built with React and TypeScript
-- ⚡ **Fast Backend**: FastAPI backend with automatic tool detection
+- ⚡ **Fast Backend**: FastAPI backend with automatic skill detection
 
 ## Prerequisites
 
@@ -145,7 +145,8 @@ To test it out:
 ```text
 What's the role of a product manager?
 ```
-This question does not require any tools and the LLM will answer it independently.
+This question does not require any skills and the LLM will answer it independently.
+
 2. Now ask:
 ```text
 We’re planning a mid market launch for our workflow automation platform. What pricing strategy should we use?
@@ -158,8 +159,8 @@ This time, the LLM should call the "Enterprise Pricing Strategy" Skill to gain t
 1. Go to the **Skills** tab
 2. Click **"+ Create Skill"**
 3. Fill in:
-   - **Name**: A descriptive name for your tool
-   - **Description**: What this tool does
+   - **Name**: A descriptive name for your skill
+   - **Description**: What this skill does
    - **Skill**: The knowledge/instructions for this skill
 4. Click **"Create"**
 
@@ -184,7 +185,7 @@ This time, the LLM should call the "Enterprise Pricing Strategy" Skill to gain t
 
 ## How It Works
 
-### Tool System
+### Skills System
 
 Skills are knowledge pieces that get inserted into the main prompt on-demand.
 
@@ -239,8 +240,8 @@ pkill -f "vite"
 The backend provides REST API endpoints:
 
 - `GET /api/models` - Get available LLM models
-- `GET /api/tools` - Get all tools
-- `POST /api/tools` - Create a tool
+- `GET /api/tools` - Get all skills tools
+- `POST /api/tools` - Create a skill tool
 - `GET /api/agents` - Get all agents
 - `POST /api/agents` - Create an agent
 - `POST /api/agents/{id}/chat` - Chat with an agent
